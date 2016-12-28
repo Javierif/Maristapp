@@ -1,8 +1,17 @@
 <ion-view>
-    <ion-content has-bouncing="false">
+    <ion-content>
+        <div id="wrapper">
+            <div id="header"><img id="imglogin" src="./img/locked.png"></div>
+            <div id="content">
 
-        <div id="container"></div>
-        <div id="login_contenedor">
+                <div id="login_contenedor">
+                    <p style="text-align: center;">Introduzca el código de desbloqueo</p>
+                    <div class="list">
+                        <input type="text" placeholder="First Name">
+                        <button class="button button-maristapp" ng-click="login(email)">Enviar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </ion-content>
 </ion-view>

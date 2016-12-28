@@ -1,4 +1,2 @@
 angular.module("starter.servicies_modelos", [])
-    .factory("NombresGuardado", function () {
-    })
-});
+    .factory("NombresGuardado", function () {});

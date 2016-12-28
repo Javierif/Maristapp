@@ -15,17 +15,11 @@
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
-    "https://github.com/katzer/cordova-plugin-hidden-statusbar-overlay.git",
     "nl.x-services.plugins.toast",
     "net.yoik.cordova.plugins.screenorientation",
     "https://github.com/cogitor/PhoneGap-OrientationLock.git",
     "cordova-plugin-whitelist"
   ],
   "cordovaPlatforms": [
-    "ios",
-    {
-      "platform": "android",
-      "locator": "windows"
-    }
   ]
 }

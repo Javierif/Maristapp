@@ -1,0 +1,20 @@
+/* Login Section */
+div#header {
+    width: 100%;
+    padding-right: 25%;
+    padding-left: 25%;
+    margin-top: 25%;
+    margin-bottom: 10%;
+}
+
+img#imglogin {
+    width: 100%;
+}
+
+button.button.button-maristapp {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 10%;
+    color: white;
+    background-color: rgb(231,183,214);
+}
