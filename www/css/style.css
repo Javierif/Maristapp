@@ -1,3 +1,7 @@
+#wrapper {
+    margin: 5%;
+}
+
 /* Login Section */
 div#header {
     width: 100%;
@@ -17,4 +21,17 @@ button.button.button-maristapp {
     margin-top: 10%;
     color: white;
     background-color: rgb(231,183,214);
+    min-height: 10px !important;
+    line-height: 30px;
+    border: none;
+}
+
+.menulogin {
+    margin-top: 10%;
+}
+
+.menulogin input {
+    border-bottom: 1px solid #E7B7D6;
+    width: 100%;
+    text-align: center;
 }
