@@ -3,7 +3,7 @@
 }
 
 /* Login Section */
-div#header {
+div#headerlogin {
     width: 100%;
     padding-right: 25%;
     padding-left: 25%;
@@ -38,13 +38,34 @@ button.button.button-maristapp {
 
 /* Menu Section */
 
- .bar-maristapp {
+.bar-maristapp {
     border-color: #FDC3E9;
     background-color: #E7B7D6;
     background-image: linear-gradient(0deg, #E7B7D6, #E7B7D6 50%, transparent 50%);
     color: #fff;
 }
 
- .bar-maristapp .title {
-      color: #fff;
+.bar-maristapp .title {
+    color: #fff;
 }
+
+/* Bienvenida Section */
+
+#header {
+    width: 100%;
+    padding-right: 20%;
+    padding-left: 20%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#contenedor {
+    color: lightgray
+}
+
+#contenedor h4{
+    color: darkgray;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
