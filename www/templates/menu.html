@@ -18,13 +18,25 @@
     </ion-side-menu-content>
 
     <ion-side-menu side="left">
-        <ion-header-bar class="bar bar-header bar-calm item menues">
-            Menu
+        <ion-header-bar class="header-maristapp">
+            <img id="imglogin" src="./img/destacada.jpg">
         </ion-header-bar>
         <ion-content class="has-header my-menu">
             <ion-list>
                 <ion-item class="item item-icon-left" nav-clear menu-close ng-href="#/app/login">
-                    <i class="icon ion-person"></i> {{log}}
+                    <img src="./img/oracion.png" class="icon ion-person"> <span> Oración de la mañana</span>
+                </ion-item>
+                <ion-item class="item item-icon-left" nav-clear menu-close ng-href="#/app/login">
+                    <img src="./img/evangelio.png" class="icon ion-person"> <span> Evangelio del día</span>
+                </ion-item>
+                <ion-item class="item item-icon-left" nav-clear menu-close ng-href="#/app/login">
+                    <img src="./img/lema.png" class="icon ion-person"> <span> Lema anual</span>
+                </ion-item>
+                <ion-item class="item item-icon-left" nav-clear menu-close ng-href="#/app/login">
+                    <img src="./img/somos.png" class="icon ion-person"> <span> Quiénes somos</span>
+                </ion-item>
+                <ion-item class="item item-icon-left" nav-clear menu-close ng-href="#/app/login">
+                    <img src="./img/buscador.png" class="icon ion-person"> <span> Buscador</span>
                 </ion-item>
             </ion-list>
         </ion-content>

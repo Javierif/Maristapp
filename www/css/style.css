@@ -49,6 +49,15 @@ button.button.button-maristapp {
     color: #fff;
 }
 
+.header-maristapp {
+    padding: 0px;
+    height: 25%;
+}
+
+.has-header {
+    top: 25%;
+}
+
 /* Bienvenida Section */
 
 #header {
