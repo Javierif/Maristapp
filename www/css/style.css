@@ -35,3 +35,16 @@ button.button.button-maristapp {
     width: 100%;
     text-align: center;
 }
+
+/* Menu Section */
+
+ .bar-maristapp {
+    border-color: #FDC3E9;
+    background-color: #E7B7D6;
+    background-image: linear-gradient(0deg, #E7B7D6, #E7B7D6 50%, transparent 50%);
+    color: #fff;
+}
+
+ .bar-maristapp .title {
+      color: #fff;
+}

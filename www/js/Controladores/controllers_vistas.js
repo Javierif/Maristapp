@@ -1,5 +1,7 @@
 angular.module('starter.controllers', [])
 
+    .controller('menuCtrl', function ($scope, $state) {})
+
     .controller('loginCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
 
     $scope.login = function(password) {
