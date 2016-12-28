@@ -22,5 +22,10 @@ angular.module('starter.controllers', [])
             },
             function (errorPlayload) {});
     }
+    })
 
-});
+    .controller('bienvenidaCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+        $scope.titulo = "Bienvenidos a MaristApp";
+        $scope.texto = "MaristApp es la aplicaci\u00f3n m\u00f3vil y web para los centros educativos\u00a0maristas de las provincias Compostela, Ib\u00e9rica, L'Hermitage y Mediterr\u00e1nea. En ella encontrar\u00e1s material para poder motivar y animar la oraci\u00f3n de cada ma\u00f1ana.\r\n\r\n\u00a0\r\n\r\nAdem\u00e1s, puedes descarg\u00e1rtela\u00a0para que la\u00a0lleves siempre contigo.";
+
+    });
