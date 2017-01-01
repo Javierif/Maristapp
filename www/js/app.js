@@ -58,7 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.servicies_pe
         views: {
             'menuContent': {
                 templateUrl: "templates/quienessomos.html",
-                controller: 'evangelioCtrl'
+                controller: 'quienessomosCtrl'
             }
         }
     })

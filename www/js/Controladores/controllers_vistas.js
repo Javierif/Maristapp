@@ -38,5 +38,10 @@ angular.module('starter.controllers', [])
 
     .controller('evangelioCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
 
+    })
+
+
+    .controller('quienessomosCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+
     });
 
