@@ -1,9 +1,9 @@
 <ion-view>
     <ion-content has-bouncing="false">
-        <h3 style="text-align:center"> Seleccione curso</h3>
+        <p style="text-align:center; color:lightgray; margin:5px;"> Seleccione curso</p>
         <ul>
-            <li ng-repeat="curso in cursos">
-                <button class="button button-light">
+            <li ng-repeat="curso in cursos" class="cursos">
+                <button class="button button-light buttoncursos">
                     {{curso.nombre}}
                 </button>
             </li>

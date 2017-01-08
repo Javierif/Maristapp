@@ -91,3 +91,17 @@ button.button.button-maristapp {
 .scroll {
     height: 100%;
 }
+
+/* Cursos Section */
+
+.buttoncursos {
+    width: 80%;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+.cursos {
+    text-align: center;
+    margin: 5px;
+
+}
