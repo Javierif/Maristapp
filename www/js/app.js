@@ -35,6 +35,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.servicies_pe
             }
         }
     })
+        .state('maristapp.cursos', {
+        url: "/oracion",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/cursos.html",
+                controller: 'cursosCtrl'
+            }
+        }
+    })
         .state('maristapp.oracion', {
         url: "/oracion",
         views: {

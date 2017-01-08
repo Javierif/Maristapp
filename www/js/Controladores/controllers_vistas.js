@@ -1,6 +1,8 @@
 angular.module('starter.controllers', [])
 
-    .controller('menuCtrl', function ($scope, $state) {})
+    .controller('menuCtrl', function ($scope, $state) {
+
+    })
 
     .controller('loginCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
 
@@ -40,6 +42,13 @@ angular.module('starter.controllers', [])
 
     })
 
+    .controller('cursosCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+
+    })
+
+    .controller('oracionCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+
+    })
 
     .controller('quienessomosCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
 
