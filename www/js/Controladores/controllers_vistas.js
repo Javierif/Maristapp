@@ -66,7 +66,14 @@ angular.module('starter.controllers', [])
 })
 
 
-    .controller('oracionCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+    .controller('oracionCtrl', function ($scope, Peticiones, $state, $ionicLoading,Curso) {
+        $scope.oracion = {"errorCode":0,"message":"","oracion":{"id":2616,"titulo":"FELIZ NAVIDAD","texto":"Feliz Navidad\r\nFeliz Navidad\r\nFeliz Navidad\r\npr\u00f3spero a\u00f1o y felicidad.\r\n\r\nFeliz Navidad\r\nFeliz Navidad\r\nFeliz Navidad\r\npr\u00f3spero a\u00f1o y felicidad.\r\n\r\nI wanna wish you a Merry Christmas\r\nI wanna wish you a Merry Christmas\r\nI wanna wish you a Merry Christmas\r\nFrom	the	bottom of my heart.","imagen":"","pathaudio":"","audio":"","video":"ihW56Xa3XGQ","h":0,"w":0}}
+
+        var respuesta  = Peticiones.getOracion("es",Curso.getCursoActual());
+        respuesta.then( function(result) {
+            alert("RESULTADO DE LA ORACION " + result);
+            $scope.oracion = result;
+        });
 
 })
 
