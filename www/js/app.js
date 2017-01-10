@@ -71,6 +71,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.servicies_pe
             }
         }
     })
+
+        .state('maristapp.lema', {
+        url: "/lema",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/lema.html",
+                controller: 'lemaCtrl'
+            }
+        }
+    })
         .state('maristapp.buscador', {
         url: "/buscador",
         views: {

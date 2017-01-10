@@ -28,7 +28,7 @@ angular.module('starter.controllers', [])
 
     .controller('bienvenidaCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
     $scope.titulo = "Bienvenidos a MaristApp";
-    $scope.texto = "MaristApp es la aplicaci\u00f3n m\u00f3vil y web para los centros educativos\u00a0maristas de las provincias Compostela, Ib\u00e9rica, L'Hermitage y Mediterr\u00e1nea. En ella encontrar\u00e1s material para poder motivar y animar la oraci\u00f3n de cada ma\u00f1ana.\r\n\r\n\u00a0\r\n\r\nAdem\u00e1s, puedes descarg\u00e1rtela\u00a0para que la\u00a0lleves siempre contigo.";
+    $scope.texto = Peticiones.getEjemploBienvenida();
     var respuesta = Peticiones.getBienvenida();
     respuesta.then(
         function(result) {
@@ -67,13 +67,25 @@ angular.module('starter.controllers', [])
 
 
     .controller('oracionCtrl', function ($scope, Peticiones, $state, $ionicLoading,Curso) {
-        $scope.oracion = {"errorCode":0,"message":"","oracion":{"id":2616,"titulo":"FELIZ NAVIDAD","texto":"Feliz Navidad\r\nFeliz Navidad\r\nFeliz Navidad\r\npr\u00f3spero a\u00f1o y felicidad.\r\n\r\nFeliz Navidad\r\nFeliz Navidad\r\nFeliz Navidad\r\npr\u00f3spero a\u00f1o y felicidad.\r\n\r\nI wanna wish you a Merry Christmas\r\nI wanna wish you a Merry Christmas\r\nI wanna wish you a Merry Christmas\r\nFrom	the	bottom of my heart.","imagen":"","pathaudio":"","audio":"","video":"ihW56Xa3XGQ","h":0,"w":0}}
+    $scope.oracion = Peticiones.getEjemploOracion();
 
-        var respuesta  = Peticiones.getOracion("es",Curso.getCursoActual());
-        respuesta.then( function(result) {
-            alert("RESULTADO DE LA ORACION " + result);
-            $scope.oracion = result;
-        });
+    var respuesta  = Peticiones.getOracion("es",Curso.getCursoActual());
+    respuesta.then( function(result) {
+        alert("RESULTADO DE LA ORACION " + result);
+        $scope.oracion = result;
+    });
+
+})
+
+    .controller('lemaCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+    $scope.lema = Peticiones.getEjemploLema();
+
+
+    var respuesta  = Peticiones.getLema("es");
+    respuesta.then( function(result) {
+        alert("RESULTADO DEL LEMA " + result);
+        $scope.lema = result;
+    });
 
 })
 

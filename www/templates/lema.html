@@ -1,0 +1,14 @@
+<ion-view>
+    <ion-content>
+        <div id="wrapper">
+            <div id="header"><img id="imglogin" src="http://www.maristapp.com{{lema.lema.imagen}}"></div>
+            <div id="content">
+                <div id="contenedor">
+                    <h4 ng-bind-html="lema.lema.titulo" ></h4>
+                    <div style="text-align:right" ng-if="[{lema.lema.video}}"><a href="https://www.youtube.com/watch?v={{lema.lema.video}}"><img ng-src="./img/ic_play.png"   style="background:red; padding: 4px;"></a></div>
+                    <pre style="background:none; color: darkgray; text-align:left">{{ lema.lema.texto }}</pre>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
