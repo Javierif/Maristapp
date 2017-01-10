@@ -49,6 +49,12 @@ angular.module('starter.controllers', [])
     );
 })
 
+
+    .controller('buscadorCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+
+})
+
+
     .controller('evangelioCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
 
 })
