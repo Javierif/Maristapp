@@ -3,7 +3,7 @@
         <p style="text-align:center; color:lightgray; margin:5px;"> Seleccione curso</p>
         <ul>
             <li ng-repeat="curso in cursos" class="cursos">
-                <button class="button button-light buttoncursos">
+                <button class="button button-light buttoncursos" ng-click="oracion(curso.id)">
                     {{curso.nombre}}
                 </button>
             </li>
