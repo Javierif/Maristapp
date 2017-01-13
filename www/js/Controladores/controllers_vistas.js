@@ -56,7 +56,30 @@ angular.module('starter.controllers', [])
 })
 
 
+
+    .controller('lemaCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+    $scope.lema = Peticiones.getEjemploLema();
+
+
+    var respuesta  = Peticiones.getLema("es");
+    respuesta.then( function(result) {
+        alert("RESULTADO DEL LEMA " + result);
+        $scope.lema = result;
+    });
+
+})
+
     .controller('buscadorCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+
+    $scope.buscar = function(texto) {
+        $scope.busqueda = Peticiones.getEjemploBusqueda();
+
+        var respuesta  = Peticiones.getBusqueda(texto);
+        respuesta.then( function(result) {
+            alert("RESULTADO DEL LEMA " + result);
+            $scope.busqueda = result;
+        });
+    }
 
 })
 
@@ -77,17 +100,6 @@ angular.module('starter.controllers', [])
 
 })
 
-    .controller('lemaCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
-    $scope.lema = Peticiones.getEjemploLema();
-
-
-    var respuesta  = Peticiones.getLema("es");
-    respuesta.then( function(result) {
-        alert("RESULTADO DEL LEMA " + result);
-        $scope.lema = result;
-    });
-
-})
 
     .controller('quienessomosCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
 
