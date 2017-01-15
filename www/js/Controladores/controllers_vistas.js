@@ -32,8 +32,8 @@ angular.module('starter.controllers', [])
     var respuesta = Peticiones.getBienvenida();
     respuesta.then(
         function(result) {
-            $scope.titulo = result.bienvenida.titulo;
-            $scope.texto = result.bienvenida.texto;
+            console.log("RESUTALDO BIENVENIDA ES " + result);
+            $scope.result = result;
         }
     )
 })
@@ -63,7 +63,7 @@ angular.module('starter.controllers', [])
 
     var respuesta  = Peticiones.getLema("es");
     respuesta.then( function(result) {
-        alert("RESULTADO DEL LEMA " + result);
+        //alert("RESULTADO DEL LEMA " + result);
         $scope.lema = result;
     });
 
@@ -76,7 +76,7 @@ angular.module('starter.controllers', [])
 
         var respuesta  = Peticiones.getBusqueda(texto);
         respuesta.then( function(result) {
-            alert("RESULTADO DEL LEMA " + result);
+            //alert("RESULTADO DEL LEMA " + result);
             $scope.busqueda = result;
         });
     }
@@ -94,7 +94,7 @@ angular.module('starter.controllers', [])
 
     var respuesta  = Peticiones.getOracion("es",Curso.getCursoActual());
     respuesta.then( function(result) {
-        alert("RESULTADO DE LA ORACION " + result);
+        //alert("RESULTADO DE LA ORACION " + result);
         $scope.oracion = result;
     });
 
