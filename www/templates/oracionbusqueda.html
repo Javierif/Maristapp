@@ -1,0 +1,14 @@
+<ion-view view-title="Oracion">
+    <ion-content has-bouncing="false">
+        <div id="wrapper">
+            <div id="header" style="margin-bottom: 4% !important;"><img id="imglogin" src="./img/logo.png"></div>
+            <div id="content">
+                <div id="contenedor">
+                    <h4 ng-bind-html="oracion.titulo" style="color:#484747 !important; margin-bottom:0px !important;"></h4>
+                    <div style="text-align:right"><a href="https://www.youtube.com/watch?v={{oracion.video}}"><img ng-src="./img/ic_play.png" ng-if="oracion.video != ''"  style="background:red; padding: 4px;"></a></div>
+                    <pre style="background:none; margin-top:30px;">{{oracion.texto }}</pre>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

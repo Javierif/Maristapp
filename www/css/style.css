@@ -8,6 +8,8 @@ pre {
     width: 100%;
     max-width: 100%;
     overflow-x:none;
+    white-space: pre-wrap;
+    word-break: normal;
 }
 /* Login Section */
 div#headerlogin {
@@ -79,6 +81,7 @@ button.button.button-maristapp {
     margin-bottom: 10%;
 }
 
+
 #contenedor {
     color: lightgray
 }
@@ -111,4 +114,10 @@ button.button.button-maristapp {
     text-align: center;
     margin: 5px;
 
+}
+
+/* BUSCAR Section */
+
+.list {
+    margin-top: 20px;
 }

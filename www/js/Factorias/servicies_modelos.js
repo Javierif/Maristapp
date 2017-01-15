@@ -22,12 +22,19 @@ angular.module("starter.servicies_modelos", [])
 
     .factory("Oracion", function() {
         var oraciones = [];
+        var oracionActual = {};
         return {
             getOraciones: function() {
                 return oraciones;
             },
             setOraciones: function(oracionesbusqueda) {
                 oraciones = oracionesbusqueda;
+            },
+            getOracionActual: function() {
+                return oracionActual;
+            },
+            setOracionActual: function(oracion) {
+                oracionActual = oracion;
             }
 
         }

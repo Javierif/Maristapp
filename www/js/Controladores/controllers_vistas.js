@@ -93,23 +93,22 @@ angular.module('starter.controllers', [])
 
 })
 
-    .controller('buscadorCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+    .controller('buscadorCtrl', function ($scope, Peticiones, $state, $ionicLoading,Oracion) {
 
     $scope.buscar = function (texto) {
         console.log("DENTRO DE BUSCADOR " + texto)
-        //$scope.busqueda = Peticiones.getEjemploBusqueda();
+        $scope.busqueda = Peticiones.getEjemploBusqueda();
 
-        var respuesta  = Peticiones.getBusqueda("es",texto);
+        /*var respuesta  = Peticiones.getBusqueda("es",texto);
         respuesta.then( function(result) {
-            console.log("RESULTADO DEL LEMA " + JSON.stringify(result));
-            $scope.busqueda = result;
-        });
+            Oracion.setOraciones(resutl);
+            $scope.busqueda = Oracion.getOraciones();
+        });*/
     }
-
-})
-
-
-    .controller('evangelioCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+    $scope.verOracion = function(oracion) {
+        Oracion.setOracionActual(oracion);
+        $state.go("maristapp.oracionbusqueda");
+    }
 
 })
 
@@ -125,8 +124,21 @@ angular.module('starter.controllers', [])
 
 })
 
+    .controller('oracionbusquedaCtrl', function ($scope, Peticiones, Oracion, $state, $ionicLoading,Curso) {
+    $scope.oracion = Oracion.getOracionActual();
+
+    var respuesta  = Peticiones.getOracion("es",Curso.getCursoActual());
+    respuesta.then( function(result) {
+        console.log("RESULTADO DE LA ORACION " + JSON.stringify(result));
+        $scope.oracion = result;
+    });
+
+})
 
     .controller('quienessomosCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+
+})
+    .controller('evangelioCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
 
 });
 

@@ -53,6 +53,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.servicies_pe
             }
         }
     })
+            .state('maristapp.oracionbusqueda', {
+        url: "/cursos/oracionbusqueda",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/oracionbusqueda.html",
+                controller: 'oracionbusquedaCtrl'
+            }
+        }
+    })
+
         .state('maristapp.evangelio', {
         url: "/evangelio",
         views: {

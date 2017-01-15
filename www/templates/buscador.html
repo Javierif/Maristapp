@@ -4,14 +4,14 @@
             <h4 style="text-align:center; color:lightgray; margin:5px;"> Introduce el texto a buscar</h4>
             <input type="text" ng-model="texto" class="inputmaristapp">
             <button class="button button-maristapp" ng-click="buscar(texto)">Enviar</button>
-            <div class="list">
-                <a class="item item-thumbnail-left" href="#">
-                    <img src="cover.jpg">
-                    <h2>Pretty Hate Machine</h2>
-                    <p>Nine Inch Nails</p>
-                </a>
-            </div>
-            {{busqueda}}
         </div>
+        <div class="list">
+            <a ng-repeat="oracion in busqueda.oraciones" class="item item-thumbnail-left" ng-click="verOracion(oracion)">
+                <img ng-src="{{oracion.imagen == '' && './img/empty_search.png' || oracion.image}}">
+                <h2>{{oracion.titulo}}</h2>
+                <p>{{oracion.texto}}</p>
+            </a>
+        </div>
+
     </ion-content>
 </ion-view>
