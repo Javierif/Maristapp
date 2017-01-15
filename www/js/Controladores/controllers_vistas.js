@@ -4,18 +4,22 @@ angular.module('starter.controllers', [])
 
 })
 
-    .controller('loginCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
+    .controller('loginCtrl', function ($scope, Peticiones, $state, $ionicLoading, $location) {
 
     $scope.login = function(password) {
+
+        // $state.go("app.bienvenida");
+
         $ionicLoading.show({
             template: '<i class="icon ion-looping"></i> Conectando con el servidor...'
         });
         var respuesta = Peticiones.login(password);
         respuesta.then(
             function (result) {
+                console.log("EL RESULTADO ES " + JSON.stringify(result) + " Y MI RESPUESTA ES " + password) ;
                 $ionicLoading.hide();
                 if(result.codigo == password) {
-                    $state.go("app.bienvenida");
+                    $location.url("/app/bienvenida");
                 } else {
                     window.plugins.toast.showShortBottom("código incorrecto.",
                                                          function (a) {},
@@ -23,6 +27,7 @@ angular.module('starter.controllers', [])
                 }
             },
             function (errorPlayload) {});
+
     }
 })
 
@@ -31,15 +36,16 @@ angular.module('starter.controllers', [])
     $scope.texto = Peticiones.getEjemploBienvenida();
     var respuesta = Peticiones.getBienvenida();
     respuesta.then(
-        function(result) {
-            console.log("RESUTALDO BIENVENIDA ES " + result);
-            $scope.result = result;
+        function (result) {
+            console.log("EL RESULTADO ES " + JSON.stringify(result))
+            $scope.titulo = result.bienvenida.titulo;
+            $scope.texto = result.bienvenida.texto;
         }
     )
 })
 
 
-    .controller('cursosCtrl', function ($scope, Peticiones, $state, $ionicLoading,Curso) {
+    .controller('cursosCtrl', function ($scope, Peticiones, $state, $ionicLoading, $ionicPopup, Curso) {
     $scope.cursos = Curso.getCursos();
     var respuesta = Peticiones.getCursos();
     respuesta.then(
@@ -47,23 +53,41 @@ angular.module('starter.controllers', [])
             Curso.setCursos(result.cursos);
         }
     );
+
+
     $scope.oracion = function(idOracion) {
         console.log("idoracion " + idOracion);
         Curso.setCursoActual(idOracion);
         console.log("Curso actual " + Curso.getCursoActual());
-        $state.go("maristapp.oracion");
+        var respuesta = Peticiones.getOracion("es", Curso.getCursoActual());
+        respuesta.then(function (result) {
+            if (result.oracion) {
+                $state.go("maristapp.oracion");
+            } else {
+                var alertPopup = $ionicPopup.alert({
+                    title: '<b>No hay oración para este día</b>',
+                    buttons: [
+                        {
+                            text: '<b>Aceptar</b>',
+                            type: 'button-light'
+                        }
+                    ]
+                });
+            }
+        });
+
     }
 })
 
 
 
     .controller('lemaCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
-    $scope.lema = Peticiones.getEjemploLema();
+    //$scope.lema = Peticiones.getEjemploLema();
 
 
     var respuesta  = Peticiones.getLema("es");
     respuesta.then( function(result) {
-        //alert("RESULTADO DEL LEMA " + result);
+        console.log("RESULTADO DEL LEMA " + JSON.stringify(result));
         $scope.lema = result;
     });
 
@@ -71,12 +95,13 @@ angular.module('starter.controllers', [])
 
     .controller('buscadorCtrl', function ($scope, Peticiones, $state, $ionicLoading) {
 
-    $scope.buscar = function(texto) {
-        $scope.busqueda = Peticiones.getEjemploBusqueda();
+    $scope.buscar = function (texto) {
+        console.log("DENTRO DE BUSCADOR " + texto)
+        //$scope.busqueda = Peticiones.getEjemploBusqueda();
 
-        var respuesta  = Peticiones.getBusqueda(texto);
+        var respuesta  = Peticiones.getBusqueda("es",texto);
         respuesta.then( function(result) {
-            //alert("RESULTADO DEL LEMA " + result);
+            console.log("RESULTADO DEL LEMA " + JSON.stringify(result));
             $scope.busqueda = result;
         });
     }
@@ -94,7 +119,7 @@ angular.module('starter.controllers', [])
 
     var respuesta  = Peticiones.getOracion("es",Curso.getCursoActual());
     respuesta.then( function(result) {
-        //alert("RESULTADO DE LA ORACION " + result);
+        console.log("RESULTADO DE LA ORACION " + JSON.stringify(result));
         $scope.oracion = result;
     });
 
