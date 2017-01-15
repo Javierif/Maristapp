@@ -1,7 +1,11 @@
-#wrapper {
+
+.scroll {
     margin: 5%;
 }
 
+pre {
+    background: none;
+}
 /* Login Section */
 div#headerlogin {
     width: 100%;
@@ -31,7 +35,7 @@ button.button.button-maristapp {
 }
 
 .inputmaristapp {
-    border-bottom: 1px solid #E7B7D6;
+    border-bottom: 2px solid #E7B7D6 !important;
     width: 100%;
     text-align: center;
 }
