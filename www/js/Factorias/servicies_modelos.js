@@ -20,6 +20,30 @@ angular.module("starter.servicies_modelos", [])
 
 })
 
+
+.factory("Usuario", function () {
+    // Might use a resource here that returns a JSON arra
+
+    var usuario ="";
+    return {
+        loadusuario: function () {
+            var cargado = window.localStorage["usuario"];
+            if (cargado != undefined && cargado != "vacio") {
+                console.log(JSON.stringify(cargado));
+                user = JSON.parse(cargado);
+                return true;
+            }
+            return false;
+        },
+        saveusuario: function (password) {
+            window.localStorage["usuario"] = JSON.stringify(password);
+        },
+        borrarusuario: function () {
+            window.localStorage["usuario"] = "vacio";
+        }
+    }
+})
+
     .factory("Oracion", function() {
         var oraciones = [];
         var oracionActual = {};

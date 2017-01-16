@@ -4,8 +4,14 @@ angular.module('starter.controllers', [])
 
 })
 
-    .controller('loginCtrl', function ($scope, Peticiones, $state, $ionicLoading, $location) {
+    .controller('loginCtrl', function ($scope, Peticiones, $state, $ionicLoading, $location, Usuario) {
 
+
+        var usuario = Usuario.loadusuario();
+        console.log("USUARIO " + usuario);
+        if (usuario) {
+            $location.url("/app/bienvenida");
+        }
     $scope.login = function(password) {
 
         // $state.go("app.bienvenida");
@@ -20,6 +26,7 @@ angular.module('starter.controllers', [])
                 $ionicLoading.hide();
                 if(result.codigo == password) {
                     $location.url("/app/bienvenida");
+                    Usuario.saveusuario(password);
                 } else {
                     window.plugins.toast.showShortBottom("código incorrecto.",
                                                          function (a) {},
@@ -97,13 +104,18 @@ angular.module('starter.controllers', [])
 
     $scope.buscar = function (texto) {
         console.log("DENTRO DE BUSCADOR " + texto)
-        $scope.busqueda = Peticiones.getEjemploBusqueda();
-
-        /*var respuesta  = Peticiones.getBusqueda("es",texto);
-        respuesta.then( function(result) {
-            Oracion.setOraciones(resutl);
+       // $scope.busqueda = Peticiones.getEjemploBusqueda();
+        $ionicLoading.show({
+            template: '<i class="icon ion-looping"></i> Conectando con el servidor...'
+        });
+        var respuesta  = Peticiones.getBusqueda("es",texto);
+        respuesta.then(function (result) {
+            console.log("RESPINDIO EL SERVER " + JSON.stringify(result));
+            Oracion.setOraciones(result);
             $scope.busqueda = Oracion.getOraciones();
-        });*/
+            $ionicLoading.hide();
+
+        });
     }
     $scope.verOracion = function(oracion) {
         Oracion.setOracionActual(oracion);
